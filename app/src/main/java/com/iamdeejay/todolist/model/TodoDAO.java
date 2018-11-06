@@ -1,0 +1,27 @@
+package com.iamdeejay.todolist.model;
+
+import android.arch.lifecycle.LiveData;
+import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
+import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
+
+import java.util.List;
+
+@Dao
+public interface TodoDAO {
+
+    @Query("SELECT * FROM todo")
+    LiveData<List<Todo>> getAllTodo();
+
+    @Delete
+    void deleteToDo(Todo todo);
+
+    @Update
+    void updateToDo(Todo todo);
+
+    @Insert
+    void insertToDo(Todo todo);
+
+}
