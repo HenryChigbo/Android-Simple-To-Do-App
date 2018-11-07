@@ -23,6 +23,7 @@ public class AddToDoActivity extends AppCompatActivity {
     TextView title;
     TextView description;
     FloatingActionButton fab;
+
     Context context;
 
 
@@ -30,6 +31,8 @@ public class AddToDoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_to_do);
+
+        context = this;
 
         title = findViewById(R.id.title);
 
